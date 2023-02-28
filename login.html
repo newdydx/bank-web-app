@@ -9,17 +9,23 @@
 </head>
 <body>
     <div class="signup">
+        <div>
         <h2>Sign into your account</h2>
         <h6>Login to your BankMe account</h6>
+        </div>
         <div class="form">
             <label>Email Address</label>
             <input type="email" placeholder="" id="email"> 
             <label>Password</label>
-            <input type="text" placeholder="" id="password"> 
-            <span>Have you forgotten password?</span>
-            <a href="">click here to recover it</a><br>
-            <button onclick="login(event)">Login</button><br>
-            <span>Do you not have a BankMe account?<br><a href="signup.html">Sign up here</a></span>
+            <input type="text" placeholder="" id="password">
+            <div class="pass"> 
+            <p>Have you forgotten password?</p>
+            <h4><a href="">click here to recover it</a></h4>
+            </div>
+            <div class="last-sec">
+            <button onclick="login(event)">Login</button>
+            <p>Do you not have a BankMe account?<a href="signup.html">Sign up here</a></p>
+            </div>
         </div>
     </div>
     <script>
