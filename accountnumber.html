@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bank App</title>
+    <link href="style.css" rel="stylesheet">
+</head>
+<body>
+    <h4>Generate your account number</h4>
+    <div>
+      <p>Your account number is:</p>
+      <p id="account-number"></p>
+      <button onclick="generateAccountNumber()">Generate</button><br>
+      <button onclick="dashboard()">Proceed to your dahboard</button>
+    </div>
+  </body>
+</body>
+<script>
+    function generateAccountNumber() {
+    let accountNumber = Math.floor(Math.random() * 9000000000) + 1000000000;
+    let accountNumberElement = document.getElementById("account-number");
+    accountNumberElement.textContent = accountNumber;
+    
+    localStorage.setItem("accountNumber", accountNumber);
+}
+
+function dashboard() {
+    window.location.href = "dashboard.html"
+}
+</script>
+</html>
