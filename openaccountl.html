@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="style.css" rel="stylesheet">
+</head>
+<body>
+    <button>click here </button>
+</body>
+</html>
+<script>
+    let screen = document.getElementById("show");
+
+    function generateAccountNumber() {
+        const digits = '0123456789';
+            let accountNumber = '';
+            
+            for (let i = 0; i < 10; i++) {
+                accountNumber += digits[Math.floor(Math.random() * 10)];
+            }
+            
+        return accountNumber;
+    }
+    console.log(generateAccountNumber());
+    
+    function show() {
+        const digits = '0123456789';
+            let accountNumber = '';
+            
+            for (let i = 0; i < 10; i++) {
+                accountNumber += digits[Math.floor(Math.random() * 10)];
+            }
+            
+        return accountNumber;
+    }
+    console.log(show());
+ // Example output: 4760392815
+</script>
+<script>
+    function generateAccountNumber() {
+  const digits = '0123456789';
+  let accountNumber = '';
+  
+  for (let i = 0; i < 10; i++) {
+    accountNumber += digits[Math.floor(Math.random() * 10)];
+  }
+  
+  return accountNumber;
+}
+
+console.log(generateAccountNumber()); // Example output: 4760392815
+
+</script>

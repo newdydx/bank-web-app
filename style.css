@@ -1,0 +1,97 @@
+body {
+    background-color: white;
+    font-family: sans-serif;
+}
+
+.signup {
+    width: 360px;
+    height: 620px;
+    margin: auto;
+    background-color: orange;
+    border-radius: 3px;
+}
+
+.sign-in {
+    width: 360px;
+    height: 270px;
+    margin: auto;
+    border-radius: 3px;
+    background-color: orange;
+}
+
+h2 {
+    text-align: center;
+    padding-top: 15px;
+}
+
+h6 {
+    text-align: center;
+    padding-top: 15px;
+}
+
+.form{
+    width: 300px;
+    margin-left: 20px;
+}
+
+.form label {
+    display: flex;
+    margin-top: 20px;
+    font-size: 18px;
+}
+
+.form input {
+    width: 100%;
+    padding: 7px;
+    border: none;
+    border: 1px solid gray;
+    border-radius: 6px;
+    outline: none;
+}
+
+.button {
+    width: 320px;
+    height: 35px;
+    margin-top: 20px;
+    border: none;
+    background-color: white;
+    font-size: 18px;
+} 
+
+/* .post {
+    width: 200px;
+    height: 35px;
+    margin-top: 20px;
+    border: none;
+    background-color: white;
+    font-size: 18px;
+} */
+
+/* .post-div{
+    width: 300px;
+    margin-left: 20px;
+}
+
+.post-div label {
+    display: flex;
+    margin-top: 20px;
+    font-size: 18px;
+}
+
+.post-div input {
+    width: 100%;
+    padding: 7px;
+    border: none;
+    border: 1px solid gray;
+    border-radius: 6px;
+    outline: none;
+}
+
+.blog-style {
+    width: 100%;
+    padding: 7px;
+    border: none;
+    border: 1px solid gray;
+    border-radius: 6px;
+    outline: none;
+} */

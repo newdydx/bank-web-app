@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bank app</title>
+    <link href="style.css" rel="stylesheet">
+</head>
+<body>
+    <div class="signup">
+        <h2>Sign into your account</h2>
+        <h6>Login to your BankMe account</h6>
+        <div class="form">
+            <label>Email Address</label>
+            <input type="email" placeholder="" id="email"> 
+            <label>Password</label>
+            <input type="text" placeholder="" id="password"> 
+            <span>Have you forgotten password?</span>
+            <a href="">click here to recover it</a><br>
+            <button onclick="login(event)">Login</button><br>
+            <span>Do you not have a BankMe account?<br><a href="signup.html">Sign up here</a></span>
+        </div>
+    </div>
+    <script>
+        let email = document.getElementById("email");
+        let password = document.getElementById("password");
+
+        function login(ev) {
+        ev.preventDefault()
+        if (!email.value || !password.value) {
+        alert('Please fill in all fields.');
+        return;
+    }
+        let user = {
+            email: email.value,
+            password: password.value
+        }
+        console.log(user);
+        if (localStorage.getItem(email) !== password) {
+        alert('Invalid email or password.');
+        return;
+    } 
+    }
+</script>
+</body>
+</html>
