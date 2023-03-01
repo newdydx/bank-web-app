@@ -4,8 +4,59 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Dashboard</title>
+    <link href="./styles/style1.css" rel="stylesheet">
 </head>
 <body>
+    <p id="user"></p>
+    <p>Good morning remember to save today with BankMe</p>
+    <div id="show"></div>
+    <div class="container">
+		<div class="card">
+			<h2>Account Balance</h2>
+			<p id="accountBalance">$1000.00</p>
+		</div>
+        <div class="card">
+			<button onclick="sendMoney()">Send Money</button>
+		</div>
+		<div class="card">
+			<button onclick="withdraw()">Withdraw Money</button>
+        </div>
+        <div class="card">
+			<button onclick="airtime()">Recharge Airtime</button>
+        </div>
+        <div class="card">
+			<button onclick="payBills()">Pay Bills</button>
+        </div>
+        <div class="card">
+			<button onclick="atm()">Request for ATM</button>
+        </div>
+    </div>
 </body>
+    <script>
+        let myUser = document.getElementById("user");
+        let screen = document.getElementById("show");
+        let accountNumber = JSON.parse(localStorage.getItem("accountNumber"));
+        let email = JSON.parse(localStorage.getItem("loggedUser"));
+
+        myUser.innerHTML += `Welcome to your dashboard`
+        screen.innerHTML += `${accountNumber}`
+
+        function sendMoney() {
+            window.location.href = "sendmoney.html";
+        }
+        function withdraw() {
+            window.location.href = "withdrawmoney.html";
+        }
+        function airtime() {
+            window.location.href = "airtime.html";
+        }
+        function payBills() {
+            window.location.href = "paybills.html";
+        }
+        // function atm() {
+        //     window.location.href = ".html";
+        // }
+    </script>
+
 </html>
