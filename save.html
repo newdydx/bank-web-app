@@ -1,24 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Home page</title>
-    <link href="style.css" rel="stylesheet">
-</head>
-<body>
-    <img src="./images/pic3.png" alt="">
-    <h2>Save money</h2>
-    <p>We help you meet your savings target monthly<br>
-        and our emergency plans enable you save for<br>
-        multiple purpose.<br>
-    </p>
-    <button onclick="next()">Next</button>
-</body>
-<script>
+    <link href="./styles/save.css" rel="stylesheet" />
+  </head>
+  <body>
+    <div class="signup">
+      <img src="./images/pic3.png" alt="" />
+      <div class="content">
+      <h2>Save money</h2>
+      <p>
+        We help you meet your savings target monthly<br />
+        and our emergency plans enable you save for<br />
+        multiple purpose.<br />
+      </p>
+      </div>
+      <button onclick="next()">Next</button>
+    </div>
+  </body>
+  <script>
     function next() {
-        window.location.href = "withdraw.html";
+      window.location.href = "withdraw.html";
     }
-</script>
+  </script>
 </html>

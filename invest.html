@@ -1,24 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Home page</title>
-    <link href="style.css" rel="stylesheet">
-</head>
-<body>
-    <img src="./images/pic2.png" alt="">
-    <h2>Invest your money</h2>
-    <p>Get access to risk free investments that will<br>
-        multiply your income and pay high returns in<br>
-        few months
-    </p>
-    <button onclick="next()">Next</button>
+    <link href="./styles/save.css" rel="stylesheet" />
+  </head>
+  <body>
+    <div class="signup">
+      <img src="./images/pic2.png" alt="" class="withdraw-img" />
+      <div class="content">
+        <h2>Invest your money</h2>
+        <p>
+          Get access to risk free investments that will<br />
+          multiply your income and pay high returns in<br />
+          few months
+        </p>
+      </div>
+      <button onclick="next()">Next</button>
+    </div>
     <script>
-        function next() {
-            window.location.href = "welcomepage.html";
-        }
+      function next() {
+        window.location.href = "welcomepage.html";
+      }
     </script>
-</body>
+  </body>
 </html>
