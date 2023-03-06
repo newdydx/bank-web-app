@@ -40,7 +40,7 @@
         let email = JSON.parse(localStorage.getItem("loggedUser"));
 
         myUser.innerHTML += `Welcome to your dashboard`
-        screen.innerHTML += `${accountNumber}`
+        screen.innerHTML += `Account number: ${accountNumber}`
 
         function sendMoney() {
             window.location.href = "sendmoney.html";
@@ -54,9 +54,9 @@
         function payBills() {
             window.location.href = "paybills.html";
         }
-        // function atm() {
-        //     window.location.href = ".html";
-        // }
+        function atm() {
+            window.location.href = "atm.html";
+        }
     </script>
 
 </html>
