@@ -44,6 +44,16 @@ function createPin() {
 }
 console.log("Your transaction pin is: " + storedPin);
 
+const defaultAccounts = [
+  { user: "Alice", accountNum: "123456000", pin: "1234" },
+  { user: "Bob", accountNum: "789013332", pin: "5678" },
+  { user: "Charlie", accountNum: "345673338", pin: "9012" }
+];
+localStorage.setItem("defaultAccounts", JSON.stringify(defaultAccounts));
+const retrievedAccounts = JSON.parse(localStorage.getItem("defaultAccounts"));
+
+console.log(retrievedAccounts);
+
 function dashboard() {
     window.location.href = "dashboard.html"
 }

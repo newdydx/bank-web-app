@@ -29,23 +29,48 @@
 	</form>
 </body>
 <script>
-    let receipentBank = document.getElementById("recipientBank");
-    let receipentAccount = document.getElementById("recipientAccount");
-    let amount = document.getElementById("amount");
-    let sendmoneyArr = [];
+    let bal = document.querySelector(".bal");
+    let accountInput = document.getElementById("recipientAccount");
+    let amountInput = document.getElementById("amount");
+    let gotten = JSON.parse(localStorage.getItem("defaultAccounts"));
+    let currentUser = localStorage.getItem("loggedUser");
+
+    // let receipentBank = document.getElementById("recipientBank");
+    // let receipentAccount = document.getElementById("recipientAccount");
+    // let amount = document.getElementById("amount");
+    // let sendmoneyArr = [];
+
+    // function sendMoney(ev) {
+    //     ev.preventDefault()
+    //     let sendMoney = {
+    //         receipentBank: receipentBank.value,
+    //         receipentAccount: receipentAccount.value,
+    //         amount: amount.value
+    //     }
+    //     sendmoneyArr.push(sendMoney);
+    //     console.log(sendMoney);
+    // }
 
     function sendMoney(ev) {
-        ev.preventDefault()
-        let sendMoney = {
-            receipentBank: receipentBank.value,
-            receipentAccount: receipentAccount.value,
-            amount: amount.value
-        }
-        sendmoneyArr.push(sendMoney);
-        console.log(sendMoney);
+    ev.preventDefault()
+    const amount = Number(amountInput.value);
+    const receiverAcc = gotten.find((element => element.user === accountInput.value))
+    let currentUserInfo = gotten.find((element => element.user === currentUser))
+    if(receiverAcc.user === currentUser){
+        console.log("You can't send to self");
+    } else if(amount > 0 && currentUserInfo.accountBalance >= amount){
+        currentUserInfo.accountBalance -= amount;
+        receiverAcc.accountBalance += amount
+        localStorage.setItem("userInfo", JSON.stringify(gotten));
+        console.log(amount, currentUserInfo.accountBalance, receiverAcc.accountBalance, receiverAcc);
+        console.log("Trans successful");
+        modal.style.display = "none"
+    } else if(currentUserInfo.accountBalance < amount){
+        console.log("Insufficient funds");
+        
+    } else{
+        console.log("failed");
     }
-    let accountBalance = {
-        balance: 1000
     }
 </script>
 </html>

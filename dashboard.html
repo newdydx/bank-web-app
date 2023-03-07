@@ -14,7 +14,7 @@
     <div class="container">
 		<div class="card">
 			<h2>Account Balance</h2>
-			<p id="accountBalance">$1000.00</p>
+			<p id="accountBalance"></p>
 		</div>
         <div class="card">
 			<button onclick="sendMoney()">Send Money</button>
@@ -34,6 +34,7 @@
     </div>
 </body>
     <script>
+        let accountBalance = document.getElementById("accountBalance");
         let myUser = document.getElementById("user");
         let screen = document.getElementById("show");
         let accountNumber = JSON.parse(localStorage.getItem("accountNumber"));
@@ -41,6 +42,14 @@
 
         myUser.innerHTML += `Welcome to your dashboard`
         screen.innerHTML += `Account number: ${accountNumber}`
+
+        let user = {
+            accountNumber: JSON.parse(localStorage.getItem("accountNumber")),
+            accountBalance: 100000
+        }
+
+        localStorage.setItem("accountbalance", user.accountBalance)
+        accountBalance.textContent = localStorage.getItem("accountbalance");
 
         function sendMoney() {
             window.location.href = "sendmoney.html";
