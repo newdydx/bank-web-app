@@ -48,57 +48,35 @@
         <div class="firstcontent">
           <div><i class="material-icons">attachment</i></div>
           <p>Save for an emergency</p>
-          <div><span class="material-symbols-outlined"> arrow_forward_ios </span></div>
+          <div>
+            <span class="material-symbols-outlined"> arrow_forward_ios </span>
+          </div>
         </div>
         <div class="secondcontent">
           <div><i class="material-icons">attachment</i></div>
           <p>Invest your money</p>
-           <div><span class="material-symbols-outlined"> arrow_forward_ios </span></div>
+          <div>
+            <span class="material-symbols-outlined"> arrow_forward_ios </span>
+          </div>
         </div>
       </div>
       <div class="last">
         <p>Ways to earn more money</p>
         <div class="last-content">
-           <i class="material-icons">computer</i>
-           <p>invite and get a bonus</p>
+          <i class="material-icons">computer</i>
+          <p>invite and get a bonus</p>
         </div>
       </div>
     </div>
-</body>
-    <script>
-        let myUser = document.getElementById("user");
-        let screen = document.getElementById("show");
-        let accountNumber = JSON.parse(localStorage.getItem("accountNumber"));
-        let email = JSON.parse(localStorage.getItem("loggedUser"));
+  </body>
+  <script>
+    let myUser = document.getElementById("user");
+    let screen = document.getElementById("show");
+    let accountNumber = JSON.parse(localStorage.getItem("accountNumber"));
+    let email = JSON.parse(localStorage.getItem("loggedUser"));
 
-        myUser.innerHTML += `Welcome to your dashboard`
-        screen.innerHTML += `Account number: ${accountNumber}`
-
-        let user = {
-            accountNumber: JSON.parse(localStorage.getItem("accountNumber")),
-            accountBalance: 100000
-        }
-
-        localStorage.setItem("accountbalance", user.accountBalance)
-        accountBalance.textContent = localStorage.getItem("accountbalance");
-
-        function sendMoney() {
-            window.location.href = "sendmoney.html";
-        }
-        function withdraw() {
-            window.location.href = "withdrawmoney.html";
-        }
-        function airtime() {
-            window.location.href = "airtime.html";
-        }
-        function payBills() {
-            window.location.href = "paybills.html";
-        }
-        function atm() {
-            window.location.href = "atm.html";
-        }
-    </script>
-
+    myUser.innerHTML += `Hello Joseph`;
+    screen.innerHTML += `${accountNumber}`;
 
     function sendMoney() {
       window.location.href = "sendmoney.html";
@@ -113,7 +91,7 @@
       window.location.href = "paybills.html";
     }
     // function atm() {
-    //     window.location.href = ".html";
+    //   window.location.href = "atm.html";
     // }
   </script>
-</html>
+</html> -->
