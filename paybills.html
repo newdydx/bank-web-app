@@ -36,23 +36,58 @@
     let receipentAccount = document.getElementById("account-number");
     let receipentBank = document.getElementById("bank-name");
     let amount = document.getElementById("amount");
-    let payBillArr = [];
+    let pin = document.getElementById("pin");
+    let gotten = JSON.parse(localStorage.getItem("accountNumber"));
 
     function payBill(ev) {
         ev.preventDefault()
+        if (!receipentAccount.value || !amount.value) {
+        alert('Please fill in all fields.');
+        return;
+    }
         let payBill = {
             billType: billType.value,
             receipentBank: receipentBank.value,
             receipentAccount: receipentAccount.value,
             amount: amount.value
         }
-        payBillArr.push(payBill);
         console.log(payBill);
-        availableBalance = parseFloat(availableBalance);
-        let amountToRemove = amount.value
-        availableBalance -= amountToRemove;
+        localStorage.setItem("transaction-amount", amount.value)
+        localStorage.setItem("receipent-acctNumber", receipentAccount.value)
 
-        localStorage.setItem("accountbalance", availableBalance);
+        if (receipentAccount.value == gotten) {
+            alert("Can't send money to self");
+            return;
+        }
+
+        let storedPin = localStorage.getItem("transactionPin");
+        if(pin.value !== storedPin) {
+            alert("Wrong pin");
+            return;
+        } 
+
+        let currentBal = +localStorage.getItem('accBal');
+
+        if (currentBal < amount.value){
+            alert("Not enough funds");
+            return;
+        }
+
+        if (currentBal) {
+            currentBal -= amount.value;
+            localStorage.setItem('accBal', currentBal);
+        }
+
+        alert("Press OK to confirm transaction");
+        window.location.href = "sucess.html"
+
+        // let availableBalance = JSON.parse(localStorage.getItem("accountdetails"));
+        // console.log(availableBalance);
+        // availableBalance = parseFloat(availableBalance);
+        // let amountToRemove = amount.value
+        // availableBalance -= amountToRemove;
+
+        // localStorage.setItem("accountbalance", availableBalance);
 
     }
 </script>

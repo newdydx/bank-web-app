@@ -31,6 +31,7 @@
     let networkType = document.getElementById("network")
     let phoneNumber = document.getElementById("phone-number");
     let amount = document.getElementById("amount");
+    let pin = document.getElementById("pin");
 
     function buyairtime(ev) {
         ev.preventDefault();
@@ -44,14 +45,41 @@
             amount: amount.value
         }
         console.log(purchaseAirtime);
+        localStorage.setItem("transaction-amount", amount.value)
 
-        let availableBalance = JSON.parse(localStorage.getItem("accountbalance"));
-        console.log(availableBalance)
-        let newBalance = availableBalance - amount.value;
-        console.log(newBalance);
-        alert(`$${amount.value} airtime purchased successfully for ${phoneNumber.value}.`);
+        let storedPin = localStorage.getItem("transactionPin");
+        if(pin.value !== storedPin) {
+            alert("Wrong pin");
+            return;
+        } 
 
-        localStorage.setItem("newBalance", JSON.stringify(newBalance));
+        let currentBal = +localStorage.getItem('accBal');
+
+        if (currentBal < amount.value){
+            alert("Not enough funds");
+            return;
+        }
+
+        if (currentBal) {
+            currentBal -= amount.value;
+            localStorage.setItem('accBal', currentBal);
+        }
+
+        alert("Press OK to confirm transaction");
+        window.location.href = "sucess.html"
+
+
+        // let availableBalance = JSON.parse(localStorage.getItem("accountdetails"));
+        // console.log(availableBalance)
+        // let newBalance = availableBalance - amount.value;
+        // console.log(newBalance);
+        // // alert(`$${amount.value} airtime purchased successfully for ${phoneNumber.value}.`);
+
+        // localStorage.setItem("newBalance", JSON.stringify(newBalance));
+         
+        // window.location.href = "sucess.html"
+
+        // await window.location.reload("dashboard.html")
     }   
 </script>
 </html>

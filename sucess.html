@@ -4,14 +4,26 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link href="./styles/save.css" rel="stylesheet" />
+    <title>Sucessful</title>
 </head>
 <body>
-    <img src="./images/check-circle.png" alt="">
-    <p id="show" class="p-tag"></p>
+    <div class="signup">
+        <img src="./images/check-circle.png" alt="">
+        <h2>Congratulations!</h2>
+        <div class="content">
+        <p id="show" class="p-tag"></p>
+        </div>
+        <button onclick="proceed()">Print receipt</button>
+    </div>
 </body>
 <script>
+
     let screen = document.getElementById("show")
-    screen.innerHTML += ``
+    screen.innerHTML += `Your transaction has been completed.`
+
+    function proceed() {
+        window.location.href = "receipt.html"
+    }
 </script>
 </html>

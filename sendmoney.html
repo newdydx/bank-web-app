@@ -32,45 +32,79 @@
     let bal = document.querySelector(".bal");
     let accountInput = document.getElementById("recipientAccount");
     let amountInput = document.getElementById("amount");
-    let gotten = JSON.parse(localStorage.getItem("defaultAccounts"));
+    let gotten = JSON.parse(localStorage.getItem("accountNumber"));
     let currentUser = localStorage.getItem("loggedUser");
+    let pin = document.getElementById("pin");
 
-    // let receipentBank = document.getElementById("recipientBank");
-    // let receipentAccount = document.getElementById("recipientAccount");
-    // let amount = document.getElementById("amount");
-    // let sendmoneyArr = [];
-
-    // function sendMoney(ev) {
-    //     ev.preventDefault()
-    //     let sendMoney = {
-    //         receipentBank: receipentBank.value,
-    //         receipentAccount: receipentAccount.value,
-    //         amount: amount.value
-    //     }
-    //     sendmoneyArr.push(sendMoney);
-    //     console.log(sendMoney);
-    // }
+    let receipentBank = document.getElementById("recipientBank");
+    let receipentAccount = document.getElementById("recipientAccount");
+    let amount = document.getElementById("amount");
+    let sendmoneyArr = [];
 
     function sendMoney(ev) {
-    ev.preventDefault()
-    const amount = Number(amountInput.value);
-    const receiverAcc = gotten.find((element => element.user === accountInput.value))
-    let currentUserInfo = gotten.find((element => element.user === currentUser))
-    if(receiverAcc.user === currentUser){
-        console.log("You can't send to self");
-    } else if(amount > 0 && currentUserInfo.accountBalance >= amount){
-        currentUserInfo.accountBalance -= amount;
-        receiverAcc.accountBalance += amount
-        localStorage.setItem("userInfo", JSON.stringify(gotten));
-        console.log(amount, currentUserInfo.accountBalance, receiverAcc.accountBalance, receiverAcc);
-        console.log("Trans successful");
-        modal.style.display = "none"
-    } else if(currentUserInfo.accountBalance < amount){
-        console.log("Insufficient funds");
+        ev.preventDefault()
+        if (!receipentAccount.value || !amount.value) {
+        alert('Please fill in all fields.');
+        return;
+    }
+        let sendMoney = {
+            receipentBank: receipentBank.value,
+            receipentAccount: receipentAccount.value,
+            amount: amount.value
+        }
+        localStorage.setItem("transaction-amount", amount.value)
+        localStorage.setItem("receipent-acctNumber", receipentAccount.value)
+        sendmoneyArr.push(sendMoney);
+        console.log(sendMoney);
+
+        if (accountInput.value == gotten) {
+            alert("Can't send money to self");
+            return;
+        }
+
+        let storedPin = localStorage.getItem("transactionPin");
+        if(pin.value !== storedPin) {
+            alert("Wrong pin");
+            return;
+        } 
+
+        let currentBal = +localStorage.getItem('accBal');
+
+        if (currentBal < amount.value){
+            alert("Not enough funds");
+            return;
+        }
+
+        if (currentBal) {
+            currentBal -= amount.value;
+            localStorage.setItem('accBal', currentBal);
+        }
+
+        alert("Press OK to confirm transaction");
+        window.location.href = "sucess.html"
+        // window.location.href = "dashboard.html"
+    }
+
+    // function sendMoney(ev) {
+    // ev.preventDefault()
+    // const amount = Number(amountInput.value);
+    // const receiverAcc = gotten.find((element => element.user === accountInput.value))
+    // let currentUserInfo = gotten.find((element => element.user === currentUser))
+    // if(receiverAcc.user === currentUser){
+    //     console.log("You can't send to self");
+    // } else if(amount > 0 && currentUserInfo.accountBalance >= amount){
+    //     currentUserInfo.accountBalance -= amount;
+    //     receiverAcc.accountBalance += amount
+    //     localStorage.setItem("userInfo", JSON.stringify(gotten));
+    //     console.log(amount, currentUserInfo.accountBalance, receiverAcc.accountBalance, receiverAcc);
+    //     console.log("Trans successful");
+    //     modal.style.display = "none"
+    // } else if(currentUserInfo.accountBalance < amount){
+    //     console.log("Insufficient funds");
         
-    } else{
-        console.log("failed");
-    }
-    }
+    // } else{
+    //     console.log("failed");
+    // }
+    // }
 </script>
 </html>
