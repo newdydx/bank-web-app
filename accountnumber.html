@@ -44,20 +44,31 @@ function createPin() {
 }
 // console.log("Your transaction pin is: " + storedPin);
 
-const defaultAccounts = [
-  { user: "Alice", accountNum: "123456000", pin: "1234" },
-  { user: "Bob", accountNum: "789013332", pin: "5678" },
-  { user: "Charlie", accountNum: "345673338", pin: "9012" }
-];
-localStorage.setItem("defaultAccounts", JSON.stringify(defaultAccounts));
-const retrievedAccounts = JSON.parse(localStorage.getItem("defaultAccounts"));
+// const defaultAccounts = [
+//   { user: "Bob", accountNum: "789013332", pin: "5678", accountbal: "$500" }
+// ];
 
-console.log(retrievedAccounts);
+// localStorage.setItem("defaultAccounts", JSON.stringify(defaultAccounts));
+// const retrievedAccounts = JSON.parse(localStorage.getItem("defaultAccounts"));
+
+// console.log(retrievedAccounts);
 
 function dashboard() {
   if (!localStorage.getItem('accBal')) {
       localStorage.setItem('accBal', 10000);
    }
+
+  //  if(!localStorage.getItem('receiverAccountnumber')) {
+  //   localStorage.setItem('receiverAccountnumber', 789013332)
+  //  }
+
+  //  if(!localStorage.getItem('receiverAccountbal')) {
+  //   localStorage.setItem('receiverAccountbal', parseInt(5000))
+  //  }
+
+  //  if(!localStorage.getItem('receiverPin')) {
+  //   localStorage.setItem('receiverPin', 5678)
+  //  }
 
     window.location.href = "dashboard.html"
 }

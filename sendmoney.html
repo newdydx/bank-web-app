@@ -56,6 +56,8 @@
         localStorage.setItem("receipent-acctNumber", receipentAccount.value)
         sendmoneyArr.push(sendMoney);
         console.log(sendMoney);
+        // let receiverAccount = JSON.parse(localStorage.getItem("defaultAccounts"));
+        // console.log(receiverAccount);
 
         if (accountInput.value == gotten) {
             alert("Can't send money to self");
@@ -78,6 +80,17 @@
         if (currentBal) {
             currentBal -= amount.value;
             localStorage.setItem('accBal', currentBal);
+        }
+
+        let receiverAccountnumber = localStorage.getItem('receiverAccountnumber');
+        let receiverAccountbal = localStorage.getItem('receiverAccountbal');
+
+        if (accountInput.value = receiverAccountnumber) {
+            currentBal -= amount.value;
+            let newBal = parseInt(receiverAccountbal) + parseInt(amount.value);
+            console.log(newBal);
+            
+            localStorage.setItem("receiverAccountbal", newBal);
         }
 
         alert("Press OK to confirm transaction");

@@ -53,6 +53,14 @@
             alert('User already exists. Please choose a different username.');
             return;
         }
+
+        let receiver = {
+            email: "olaniyi@gmail.com",
+            password: "Eniks"
+        }
+        if(!localStorage.getItem('receiver')) {
+            localStorage.setItem('receiver', JSON.stringify(receiver))
+        }
     }
     </script>
 </body>

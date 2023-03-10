@@ -51,6 +51,12 @@
             alert("This user has not signed up");
             return;
         }
+
+        let receiverInfo = localStorage.getItem('receiver')
+        if (user.email = receiverInfo.email) {
+            console.log("error");
+            return;
+        }
         // if(password !== storedPassword) {
         //     alert("Invalid details")
         //     return;
