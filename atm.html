@@ -5,15 +5,20 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Debit card</title>
+    <link rel="stylesheet" href="/styles/atm.css">
 </head>
 <body>
+    <div class="signup">
+        <div class="img">
     <img src="./images/atm2.png" alt="">
     <img src="./images/atm1.png" alt="">
+    </div>
     <form>
         <label for="amount">Enter pin:</label>
 		<input type="number" id="pin" name="pin" min="1" required><br>
     </form>
     <button onclick="proceedToRequest()">Proceed to request</button>
+    </div>
 </body>
 <script>
     let pin = document.getElementById("pin");
