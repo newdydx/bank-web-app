@@ -5,9 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Airtime</title>
-    <link href="./styles/style2.css" rel="stylesheet">
+    <link href="./styles/airtime.css" rel="stylesheet">
 </head>
 <body>
+    <div class="signup">
     <h2>Recharge Airtime</h2>
     <form action="buy_airtime.php" method="post">
         <label for="network">Select Network:</label>
@@ -26,6 +27,7 @@
 		<input type="number" id="pin" name="pin" min="1" required><br>
         <button onclick="buyairtime(event)" type="submit">Buy airtime</button>
       </form>
+      </div>
 </body>
 <script>
     let networkType = document.getElementById("network")
