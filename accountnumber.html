@@ -42,32 +42,10 @@ function createPin() {
   localStorage.setItem("transactionPin", pin);
   // let storedPin = localStorage.getItem("transactionPin");
 }
-// console.log("Your transaction pin is: " + storedPin);
-
-// const defaultAccounts = [
-//   { user: "Bob", accountNum: "789013332", pin: "5678", accountbal: "$500" }
-// ];
-
-// localStorage.setItem("defaultAccounts", JSON.stringify(defaultAccounts));
-// const retrievedAccounts = JSON.parse(localStorage.getItem("defaultAccounts"));
-
-// console.log(retrievedAccounts);
 
 function dashboard() {
   if (!localStorage.getItem('accBal')) {
     localStorage.setItem('accBal', 10000);
-
-    // if(!localStorage.getItem('receiverAccountnumber')) {
-    //   localStorage.setItem('receiverAccountnumber', 789013332);
-    // }
-
-    // if(!localStorage.getItem('receiverAccountbal')) {
-    //   localStorage.setItem('receiverAccountbal', parseInt(5000));
-    // }
-
-    // if(!localStorage.getItem('receiverPin')) {
-    //   llocalStorage.setItem('receiverPin', 5678);
-    // }
   }
   window.location.href = "dashboard.html"
 }
