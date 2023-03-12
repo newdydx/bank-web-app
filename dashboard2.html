@@ -88,16 +88,18 @@
     let myUser = document.getElementById("user");
     let screen = document.getElementById("show");
     let accountNumber = JSON.parse(localStorage.getItem("accountNumber"));
-    let userFullName = localStorage.getItem('userFullName');
     let email = JSON.parse(localStorage.getItem("loggedUser"));
-    const accBal = localStorage.getItem('accBal');
 
-        if (accBal) {
-            document.getElementById('accountBalance').textContent = '$' + accBal;
+    let receiverAcctno = localStorage.getItem('receiverAccountnumber');
+    let receiverBal = localStorage.getItem('newBal');
+    let receiverPin = localStorage.getItem('receiverPin');
+
+        if (receiverBal) {
+            document.getElementById('accountBalance').textContent = '$' + receiverBal;
         }
 
-    myUser.innerHTML += `Hello ${userFullName}`;
-    screen.innerHTML += `Account number: ${accountNumber}`;
+    myUser.innerHTML += `Hello`;
+    screen.innerHTML += `Account number: ${receiverAcctno}`;
 
     function sendMoney() {
       window.location.href = "sendmoney.html";

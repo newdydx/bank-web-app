@@ -92,34 +92,12 @@
             let newBal = parseInt(receiverAccountbal) + parseInt(amount.value);
             console.log(newBal);
             
-            localStorage.setItem("receiverAccountbal", newBal);
+            localStorage.setItem('newBal', newBal);
         }
 
         alert("Press OK to confirm transaction");
         window.location.href = "sucess.html"
         // window.location.href = "dashboard.html"
     }
-
-    // function sendMoney(ev) {
-    // ev.preventDefault()
-    // const amount = Number(amountInput.value);
-    // const receiverAcc = gotten.find((element => element.user === accountInput.value))
-    // let currentUserInfo = gotten.find((element => element.user === currentUser))
-    // if(receiverAcc.user === currentUser){
-    //     console.log("You can't send to self");
-    // } else if(amount > 0 && currentUserInfo.accountBalance >= amount){
-    //     currentUserInfo.accountBalance -= amount;
-    //     receiverAcc.accountBalance += amount
-    //     localStorage.setItem("userInfo", JSON.stringify(gotten));
-    //     console.log(amount, currentUserInfo.accountBalance, receiverAcc.accountBalance, receiverAcc);
-    //     console.log("Trans successful");
-    //     modal.style.display = "none"
-    // } else if(currentUserInfo.accountBalance < amount){
-    //     console.log("Insufficient funds");
-        
-    // } else{
-    //     console.log("failed");
-    // }
-    // }
 </script>
 </html>

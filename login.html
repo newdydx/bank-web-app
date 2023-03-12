@@ -6,8 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bank app</title>
     <link href="./styles/login.css" rel="stylesheet">
-    
-
 </head>
 <body>
     <div class="signup">
@@ -34,7 +32,6 @@
         let email = document.getElementById("email");
         let password = document.getElementById("password");
         let currentUser = localStorage.getItem("loggedUser");
-        let { password: storedPassword } = JSON.parse(currentUser);
 
         function login(ev) {
         ev.preventDefault()
@@ -42,29 +39,36 @@
         alert('Please fill in all fields.');
         return;
     }
+
+        localStorage.setItem('receiverPin', 5678);
+        localStorage.setItem('receiverAccountnumber', 789013332);
+        localStorage.setItem('receiverAccountbal', parseInt(5000));
+      
         let user = {
             email: email.value,
             password: password.value
         }
         console.log(user);
+
+        let receiverInfo = JSON.parse(localStorage.getItem('receiver'));
+        if (user.email == receiverInfo.email) {
+            alert("Login sucessful!");
+            window.location.href = "dashboard2.html";
+            return;
+        }
+
         if(!currentUser){
             alert("This user has not signed up");
             return;
         }
 
-        let receiverInfo = localStorage.getItem('receiver')
-        if (user.email = receiverInfo.email) {
-            console.log("error");
-            return;
-        }
+        alert("Login sucessful!");
+        window.location.href = "accountnumber.html"
         // if(password !== storedPassword) {
         //     alert("Invalid details")
         //     return;
-        alert("Login succesful!")
-        window.location.href = "accountnumber.html";
+        // }
         }
-        // alert("Login succesful!")
-        // window.location.href = "accountnumber.html";
 </script>
 </body>
 </html>

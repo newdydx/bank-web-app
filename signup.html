@@ -54,6 +54,10 @@
             return;
         }
 
+        if (!localStorage.getItem('userFullName')) {
+            localStorage.setItem('userFullName', fullName.value)
+        }
+
         let receiver = {
             email: "olaniyi@gmail.com",
             password: "Eniks"
