@@ -18,7 +18,7 @@ body {
     background-color: white;
     border-radius: 3px;
     width: 380px;
-    height: 700px;
+    height: 730px;
     border-radius: 15px;
 }
 
@@ -203,4 +203,16 @@ button {
 
 .last p {
     font-weight: 500px;
+}
+
+.butt {
+    width: 97%;
+    height: 35px;
+    margin-top: 15px;
+    border: none;
+    color: white;
+    background-color: rgb(55, 97, 205);
+    font-size: 18px;
+    border-radius: 10px;
+    cursor: pointer;
 }
